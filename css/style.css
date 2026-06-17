@@ -1,67 +1,89 @@
-/*GLOBAL STYLES*/ 
-.body {
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
 }
+
 nav {
     background-color: grey;
-    padding: 10px;
+    padding: 15px;
+    text-align: center;
 }
+
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    margin: 0 15px;
+    font-weight: bold;
 }
-/*INDEX PAGE STYLES*/
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #e6f2ff;
+
+nav a:hover {
+    color: #e6f2ff;
 }
-.hero-banner {
-    width: 100%;
-    overflow: hidden;
-}
+
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero-banner img {
     width: 100%;
-    height: 400px;
+    height: 450px;
     object-fit: cover;
-    display: flex;
 }
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e6f2ff;
+}
+
 .hero h2 {
-    font-size: 40px;
     color: #1e90ff;
-    margin-bottom: 10px;
+    font-size: 40px;
 }
+
 .hero p {
     font-size: 18px;
-    margin-bottom: 20p;
 }
+
 .btn {
+    display: inline-block;
     background-color: #1e90ff;
     color: white;
     padding: 12px 25px;
-    border-radius: 5px;
     text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
 }
+
 .btn:hover {
     background-color: #1877d4;
 }
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
 .welcome-section {
     text-align: center;
-    padding: 40px;
     background-color: white;
     margin: 20px;
+    padding: 40px;
     border-radius: 10px;
 }
+
 .welcome-section h2 {
     color: #1e90ff;
 }
-.welcome-section p {
-    font-size: 16px;
-    line-height: 1.8;
-}
+
+/* =========================
+   FEATURES
+========================= */
+
 .features {
     display: flex;
     justify-content: center;
@@ -69,73 +91,74 @@ nav a {
     gap: 20px;
     padding: 40px 20px;
 }
+
 .feature-box {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 250px;
+    padding: 20px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 .feature-box h2 {
     color: #1e90ff;
 }
-footer {
-    background-color: #1e90ff;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}   
 
-/*ABOUT PAGE STYLES*/
+/* =========================
+   ABOUT PAGE
+========================= */
+
 .about-container {
     background-color: white;
-    padding: 80px;
+    max-width: 900px;
     margin: 40px auto;
-    max-width: 800px;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.about-container h3{
-    text-align: cnter;
+
+.about-container img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-container h3 {
     color: #1e90ff;
-    margin-bottom: 30px;
+    text-align: center;
 }
-.about-container p{
-    font-size: 16px;
+
+.about-container p {
     line-height: 1.8;
-    text-align: justify;
 }
-.vision, .mission {
+
+.vision,
+.mission {
     background-color: #e8f4ff;
     border-left: 5px solid #1e90ff;
     padding: 15px;
     margin-top: 20px;
     border-radius: 5px;
 }
-footer {
-    background-color: #1e90ff;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
 
-/*CONTACT PAGE STYLES*/
+/* =========================
+   CONTACT PAGE
+========================= */
+
 .contact-container {
-    width: 80%;
     max-width: 700px;
     margin: 40px auto;
     padding: 30px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 .contact-form {
-    width: 50%;
-    margin: auto;
+    width: 100%;
 }
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -143,142 +166,158 @@ footer {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 15px;
 }
-.contact-form textarea{
+
+.contact-form textarea {
     resize: vertical;
 }
+
 .contact-form button {
     background-color: #1e90ff;
     color: white;
     border: none;
     padding: 12px;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
 }
+
 .contact-form button:hover {
     background-color: #1877d4;
 }
-.contact-info {
-    margin-top: 25px;
-    text-align: center;
-}
-.contact-info p{
-    margin-bottom: 8px 0;
-}
-footer {
-    background-color: #1e90ff;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
 
-/*SERVICES PAGE STYLES*/
+/* =========================
+   SERVICES PAGE
+========================= */
+
 .page-title {
     text-align: center;
     color: #1e90ff;
-    margin: 30px 0 10px;
+    margin: 30px 0;
 }
-.services { 
+
+.services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
 }
-.service-card{ 
-    background-color: white;;
+
+.service-card {
+    background-color: white;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.25s ease;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
-.service-card:hover{ 
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+
+.service-card:hover {
+    transform: translateY(-5px);
 }
-.service-card img{ 
+
+.service-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    filter: brightness(0.9);
 }
-.service-content{ 
+
+.service-content {
     padding: 15px;
 }
-.service-content h3{
-    color: #1e90ff; 
-    margin: 10px 0;
+
+.service-content h3 {
+    color: #1e90ff;
 }
-.service-content p{ 
-    margin: 0;
-    font-size: 15px;
-    opacity: 0.9;
-    line-height: 1.5;
-}
+
 .price {
     font-weight: bold;
-    margin: 10px 0;
 }
+
 .service-content button {
-    display: inline-block;
-    padding: 10px 15px;
     background-color: #1e90ff;
     color: white;
-    text-decoration: none;
+    border: none;
+    padding: 10px 15px;
     border-radius: 5px;
+    cursor: pointer;
 }
+
 .service-content button:hover {
     background-color: #1877d4;
 }
-footer {
-    background-color: #1e90ff;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
 
-/*GALLERY PAGE STYLES*/
+/* =========================
+   GALLERY PAGE
+========================= */
+
 .gallery-title {
     text-align: center;
     color: #1e90ff;
     margin: 30px 0;
 }
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
+
 .gallery img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+    transition: 0.3s;
 }
+
 .gallery img:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
 }
+
 .gallery-item {
     text-align: center;
 }
+
 .gallery-item p {
-    margin-top: 10px;
     font-weight: bold;
-    color: #333;
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Sticky Footer */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 footer {
     background-color: #1e90ff;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 30px;
 }
 
 
