@@ -3,9 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us</title>
+<title>SkweekyClean Services</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    emailjs.init({
+        publicKey: "mbD_tQOnc0gz0ko6N"
+    });
+
+    const form = document.querySelector(".contact-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const templateParams = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value
+        };
+
+        emailjs.send(
+            "service_2tpdk1q",
+            "template_mm3n8sk",
+            templateParams
+        )
+        .then(function () {
+            alert("Thank you! Your message has been sent.");
+            form.reset();
+        })
+        .catch(function (error) {
+            alert("Failed to send message. Please try again.");
+            console.error("EmailJS Error:", error);
+        });
+
+    });
+
+});
+</script>
 <body>
 
 <nav>
@@ -15,25 +54,30 @@
     <a href="contact.html">Contact</a>
     <a href="gallery.html">Gallery</a>
 </nav>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.6891405262063!2d25.575779574846973!3d-33.94912257319591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad233dd42453b%3A0xdc142ec7bc172939!2sGreenacres%20Shopping%20Centre!5e0!3m2!1sen!2sza!4v1781777747299!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <main>
 <div class="contact-container">
 
     <form class="contact-form">
 
-        <input type="text" id="name" placeholder="Your Name" required>
-
-        <input type="email" id="email" placeholder="Your Email" required>
-
-        <input type="tel" id="phone" placeholder="Your Phone Number">
-        <textarea id="message" placeholder="Your Message" required></textarea>
-
-        <button type="submit">Send Message</button>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" id="submit-btn">Send Message</button>
 
     </form>
 
 </div>
+    
+
 </main>
+
 <footer>
+     <h2>Our Info</h2>
+    <p><strong>Phone:</strong> 075 622 6236</p>
+    <p><strong>Email:</strong> info@skweekyclean.co.za</p>
+    <p><strong>Location:</strong> Port Elizabeth, South Africa</p>
     <p>&copy; 2026 SkweekyClean Services</p>
 </footer>
 
