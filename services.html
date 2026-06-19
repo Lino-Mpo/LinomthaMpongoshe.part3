@@ -31,7 +31,7 @@ function closeModal() {
 <div class="services">
 
     <div class="service-card">
-        <img src="images/home.jpg" alt="Home Cleaning">
+        <img src="images/home.jpg" alt="Home Cleaning" onclick="openModal(this.src)">
         <div class="service-content">
             <h3>Home Cleaning</h3>
             <p>Regular cleaning to keep your home fresh and neat.</p>
@@ -41,7 +41,7 @@ function closeModal() {
     </div>
 
     <div class="service-card">
-        <img src="images/office.jpg" alt="Office Cleaning">
+        <img src="images/office.jpg" alt="Office Cleaning" onclick="openModal(this.src)">
         <div class="service-content">
             <h3>Office Cleaning</h3>
             <p>Professional cleaning for workplaces.</p>
@@ -51,7 +51,7 @@ function closeModal() {
     </div>
 
     <div class="service-card">
-        <img src="images/deep.jpg" alt="Deep Cleaning">
+        <img src="images/deep.jpg" alt="Deep Cleaning" onclick="openModal(this.src)">
         <div class="service-content">
             <h3>Deep Cleaning</h3>
             <p>Thorough cleaning for hard-to-reach areas.</p>
@@ -61,7 +61,7 @@ function closeModal() {
     </div>
 
     <div class="service-card">
-        <img src="images/movein.jpg" alt="Move-In/Move-Out">
+        <img src="images/movein.jpg" alt="Move-In/Move-Out" onclick="openModal(this.src)">
         <div class="service-content">
             <h3>Move-In/Move-Out</h3>
             <p>Thorough cleaning before you move.</p>
@@ -71,7 +71,7 @@ function closeModal() {
     </div>
 
     <div class="service-card">
-        <img src="images/laundryandironing.jpg" alt="Laundry and Ironing">
+        <img src="images/laundryandironing.jpg" alt="Laundry and Ironing" onclick="openModal(this.src)">
         <div class="service-content">
             <h3>Laundry and Ironing</h3>
             <p>Professional laundry and ironing services.</p>
@@ -81,7 +81,7 @@ function closeModal() {
     </div>
 
     <div class="service-card">
-        <img src="images/custom.jpg" alt="Custom Cleaning">
+        <img src="images/custom.jpg" alt="Custom Cleaning" onclick="openModal(this.src)">
         <div class="service-content">
             <h3>Custom Cleaning</h3>
             <p>Specialized cleaning for unique needs.</p>
@@ -90,10 +90,6 @@ function closeModal() {
         </div>
     </div>
     
-
-   
-    
-
 
 </div>
 
@@ -105,5 +101,20 @@ function closeModal() {
     <p>&copy; 2026 SkweekyClean Services</p>
 </footer>
 
+<!-- Image Popup -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImage" alt="Enlarged Service Image">
+</div>
+
+<script>
+    function openModal(imageSrc) {
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("modalImage").src = imageSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
 </body>
 </html>
