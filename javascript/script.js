@@ -70,3 +70,12 @@
 
         return false;
     }
+// Modal functionality for service images
+    function openModal(imageSrc) {
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImage").src = imageSrc;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
