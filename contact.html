@@ -8,58 +8,7 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-    function sendMail(event) {event.preventDefault();
 
-        //Validation
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
-
-        if (!name || !email || !message) {
-            alert("Please fill in all required fields.");
-            return;
-        }
-    }
-
-    
-    document.addEventListener("DOMContentLoaded", function () {
-
-    emailjs.init({
-        publicKey: "mbD_tQOnc0gz0ko6N"
-    });
-
-    const form = document.querySelector(".contact-form");
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const templateParams = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            message: document.getElementById("message").value
-        };
-
-        emailjs.send(
-            "service_2tpdk1q",
-            "template_mm3n8sk",
-            templateParams
-        )
-        .then(function () {
-            alert("Thank you! Your message has been sent. We will get back to you soon.");
-            form.reset();
-        })
-        .catch(function (error) {
-            alert("Failed to send message. Please try again.");
-            console.error("EmailJS Error:", error);
-        });
-
-    });
-
-});
-
-</script>
 <body>
 
 <nav>
@@ -73,7 +22,7 @@
 <main>
 <div class="contact-container">
 
-    <form class="contact-form">
+    <form id="contact-form" class="contact-form" onsubmit="return sendMail(event)">
 
         <input type="text" id="name" name="name" placeholder="Your Name">
         <input type="email" id="email" name="email" placeholder="Your Email">
@@ -96,5 +45,79 @@
     <p>&copy; 2026 SkweekyClean Services</p>
 </footer>
 
+<script>
+    // Initialize EmailJS
+    emailjs.init({
+        publicKey: "mbD_tQOnc0gz0ko6N"
+    });
+
+    function sendMail(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Validation
+        if (name === "" || name.length < 2) {
+            alert("Please enter a valid name.");
+            return false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        const phoneRegex = /^[0-9+\-\s()]+$/;
+        const digitsOnly = phone.replace(/\D/g, "");
+
+        if (!phoneRegex.test(phone) || digitsOnly.length < 10) {
+            alert("Please enter a valid phone number.");
+            return false;
+        }
+
+        if (message.length < 10) {
+            alert("Message must contain at least 10 characters.");
+            return false;
+        }
+
+        const submitBtn = document.getElementById("submit-btn");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        const templateParams = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        };
+
+        emailjs.send(
+            "service_2tpdk1q",
+            "template_mm3n8sk",
+            templateParams
+        )
+        .then(function () {
+            alert("Thank you! Your message has been sent successfully.");
+            document.getElementById("contact-form").reset();
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Message";
+        })
+        .catch(function (error) {
+            console.error("EmailJS Error:", error);
+
+            alert("Failed to send message. Please try again later.");
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Message";
+        });
+
+        return false;
+    }
+</script>
 </body>
 </html>
