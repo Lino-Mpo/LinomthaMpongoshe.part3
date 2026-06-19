@@ -6,6 +6,16 @@
 <title>SkweekyClean Services</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+    function openModal(imageSrc) {
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("modalImage").src = imageSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
 <body>
 
 <nav>
@@ -17,7 +27,7 @@
 </nav>
 
 <section class="hero-banner">
-    <img src="images/hp.image.jpg" alt="Professional Cleaning Services">
+    <img src="images/hp.image.jpg" alt="Professional Cleaning Services" onclick="openModal(this.src)">
 </section>
 
 <section class="hero">

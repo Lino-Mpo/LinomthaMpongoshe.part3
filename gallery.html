@@ -6,6 +6,16 @@
 <title>SkweekyClean Services</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+    function openModal(imageSrc) {
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("modalImage").src = imageSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
 <body>
 
 <nav>
@@ -21,17 +31,17 @@
 <div class="gallery">
 
     <div class="gallery-item">
-        <img src="images/bandahome.jpg" alt="Home Cleaning">
+        <img src="images/bandahome.jpg" alt="Home Cleaning" onclick="openModal(this.src)">
         <p>Home Cleaning</p>
     </div>
 
     <div class="gallery-item">
-        <img src="images/bandaoffice.jpg" alt="Office Cleaning">
+        <img src="images/bandaoffice.jpg" alt="Office Cleaning" onclick="openModal(this.src)">
         <p>Office Cleaning</p>
     </div>
 
     <div class="gallery-item">
-        <img src="images/bandalaundry.jpg" alt="Laundry and Ironing">
+        <img src="images/bandalaundry.jpg" alt="Laundry and Ironing" onclick="openModal(this.src)">
         <p>Laundry and Ironing</p>
     </div>
 

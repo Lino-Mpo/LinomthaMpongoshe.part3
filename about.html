@@ -6,6 +6,16 @@
 <title>SkweekyClean Services</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+    function openModal(imageSrc) {
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("modalImage").src = imageSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
 <body>
 
 <nav>
@@ -18,7 +28,7 @@
 
 <section class="about-container">
 
-    <img src="images/about.jpg" alt="About Us">
+    <img src="images/about.jpg" alt="About Us" onclick="openModal(this.src)">
 
     <p>
         SkweekyClean Services is a locally owned cleaning business in Port Elizabeth,
